@@ -20,17 +20,19 @@ function makeAllTablesSortable(tables) {
         // sort table by given the table, thead, and column
         function sortTable(table, obj, index) {
             var rows = table.rows;
-            for (var i = 1; i < rows.length - 1; i++) {
-                for (var j = i+1; j < rows.length; j++) {
-                    if (rows[i].cells[index].innerHTML < rows[j].cells[index].innerHTML) {
-                        var t = rows[i].innerHTML;
-                        rows[i].innerHTML = rows[j].innerHTML;
-                        rows[j].innerHTML = t;
+            if (obj.className != "descend") {
+                for (var i = 1; i < rows.length - 1; i++) {
+                    for (var j = i+1; j < rows.length; j++) {
+                        if (rows[i].cells[index].innerHTML < rows[j].cells[index].innerHTML) {
+                            var t = rows[i].innerHTML;
+                            rows[i].innerHTML = rows[j].innerHTML;
+                            rows[j].innerHTML = t;
+                        }
                     }
                 }
             }
 
-            // reverse case
+            // Reverse case. At this case, the table must has been sorted by ascend.
             if (obj.className == "descend") {
                 var l = parseInt(rows.length / 2 + 1);
                 for (var i = 1; i < l; i++) {
