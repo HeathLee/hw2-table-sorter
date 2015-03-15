@@ -55,7 +55,7 @@ function makeAllTablesSortable(tables) {
             }
         }
 
-        var theads = table.rows[0].cells;
+        var theads = table.getElementsByTagName("th");
         for (var i = 0; i < theads.length; i++) {
             theads[i].onclick = function (a, b, c) {
                 return function () {
