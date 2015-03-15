@@ -29,3 +29,15 @@ th:hover {
 tr.alternate {
 	background-color: #dddddd;
 }
+
+.ascend {
+	background: #a4b0fd url(descend.png) no-repeat right;
+}
+
+.descend {
+	background: #a4b0fd url(ascend.png) no-repeat right;
+}
+
+.no_active {
+	background-color: #000080;
+}
