@@ -61,8 +61,8 @@ function makeAllTablesSortable(tables) {
         for (var i = 0; i < theads.length; i++) {
             theads[i].onclick = function (a, b, c) {
                 return function () {
-                    changeClassName(a, b);
-                    sortTable(a, b, c);
+                    changeClassName(a, b);  // must should call this function first 
+                    sortTable(a, b, c);     // to change the className. Then call the sort function.
                 }
             }(table, theads[i], i);
         }
